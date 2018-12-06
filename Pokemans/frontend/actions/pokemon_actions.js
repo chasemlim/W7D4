@@ -4,7 +4,7 @@ export const RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON";
 
 export const receiveAllPokemon = (pokemon) => ({
   type: RECEIVE_ALL_POKEMON,
-  payload: pokemon
+  pokemon
 });
 
 export const requestAllPokemon = () => (dispatch) => (

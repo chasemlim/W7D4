@@ -4,7 +4,7 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_ALL_POKEMON:
-      return action.payload;
+      return action.pokemon;
     default:
       return state;
   }
