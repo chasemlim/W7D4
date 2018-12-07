@@ -473,29 +473,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/api_util */ "./frontend/util/api_util.js");
-/* harmony import */ var _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./actions/pokemon_actions */ "./frontend/actions/pokemon_actions.js");
-/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/selectors */ "./frontend/reducers/selectors.js");
 
 
 
 
-
-
-
+ // import { fetchAllPokemon } from './util/api_util';
+// import { receiveAllPokemon, requestAllPokemon, requestSinglePokemon, receiveSinglePokemon } from './actions/pokemon_actions';
+// import { selectAllPokemon } from "./reducers/selectors";
 
 document.addEventListener("DOMContentLoaded", function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  var rootEl = document.getElementById('root');
-  window.receiveAllPokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_6__["receiveAllPokemon"];
-  window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_5__["fetchAllPokemon"];
-  window.requestAllPokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_6__["requestAllPokemon"];
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.selectAllPokemon = _reducers_selectors__WEBPACK_IMPORTED_MODULE_7__["selectAllPokemon"];
-  window.x = 5;
-  window.requestSinglePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_6__["requestSinglePokemon"];
-  window.receiveSinglePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_6__["receiveSinglePokemon"];
+  var rootEl = document.getElementById('root'); // window.receiveAllPokemon = receiveAllPokemon;
+  // window.fetchAllPokemon = fetchAllPokemon;
+  // window.requestAllPokemon = requestAllPokemon;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.selectAllPokemon = selectAllPokemon;
+  // window.x = 5;
+  // window.requestSinglePokemon = requestSinglePokemon;
+  // window.receiveSinglePokemon = receiveSinglePokemon;
+
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), rootEl);
@@ -619,9 +616,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectSinglePokemon", function() { return selectSinglePokemon; });
 var selectAllPokemon = function selectAllPokemon(state) {
   return Object.values(state.entities.pokemon);
-};
+}; // this method was only useful before wrapping everything in router
+// we used it in Pokemon Detail Container with mapDispatchToProps
+// it is not longer being used anywhere
+
 var selectSinglePokemon = function selectSinglePokemon(state) {
-  debugger;
   return Object.values(state.entities.pokemon);
 };
 

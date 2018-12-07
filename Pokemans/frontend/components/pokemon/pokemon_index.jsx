@@ -19,11 +19,9 @@ class PokemonIndex extends React.Component {
     
     return (
       <section className="pokedex">
-      
         <ul>
           {pokeArr}
         </ul>
-    
       </section>
     );
   }
